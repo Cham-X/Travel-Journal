@@ -8,6 +8,10 @@
   background: #f55a5a;
   width: 100vw;
 }
+.App{
+  overflow: hidden;
+  position: relative;
+}
 .header {
   padding: 0.5rem;
   text-align: center;
@@ -30,7 +34,7 @@
   gap: 0.5rem;
   background: white;
   padding: 1rem;
-  width: 45rem;
+  max-width: 45rem;
 }
 section {
   margin: 0.5rem;
@@ -47,7 +51,7 @@ section {
   font-weight: medium;
 }
 .location-image {
-  width: 140px;
+  min-width: 140px;
   height: 170px;
   border-radius: 1rem;
 }
@@ -55,7 +59,7 @@ section {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  width: 326px;
+  max-width: 326px;
 }
 .map {
   color: #aca7a7;
@@ -73,9 +77,28 @@ section {
 .card-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  margin: 0.5rem auto;
-  width: 45rem;
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
+  margin: 1rem auto;
+  width: 85%;
+}
+.add-icon{
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 3rem;
+}
+@media screen and (max-width:550px) {
+  .card{
+    display: flex;
+    flex-direction: column;
+  }
+  .location-image {
+    width: 100%;
+  }
+  .section{
+    margin: 0;
+  }
 }

@@ -1,17 +1,18 @@
 import "./App.css";
-import Card from "./Card";
-import Navbar from "./Navbar";
-import data from "./data.js";
+import { Route ,Routes, BrowserRouter } from 'react-router-dom'
+import AllTravels from "./Pages/AllTravels";
+import NewTravel from "./Pages/NewTravel";
+
 
 function App() {
-  const cards = data.map((item) => {
-    return <Card key={item.id} {...item} />;
-  });
+  
   return (
-    <div className="App">
-      <Navbar />
-      <section className="card-list">{cards}</section>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AllTravels />} />
+        <Route path="/new-journal" element={<NewTravel />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
