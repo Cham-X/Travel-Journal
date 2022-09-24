@@ -9,11 +9,12 @@ const TravelList = (props) => {
           <Card
             key={travel.id}
             id={travel.id}
+            imageUrl={travel.imageUrl}
             title={travel.title}
             startDate={travel.startDate}
             endDate={travel.endDate}
             description={travel.description}
-            imageUrl={travel.imageUrl}
+            googleMapsUrl={travel.googleMapsUrl}
           />
         );
       })}

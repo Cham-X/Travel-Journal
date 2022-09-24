@@ -21,7 +21,6 @@ const NewTravelForm = (props) => {
       };
     });
   }
-  console.log(formData);
 
   function handleSubmit(event) {
     event.preventDefault();

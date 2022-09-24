@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import Card from "../Card";
 import Navbar from "../Navbar";
 // import data from "../data";
 import AddIcon from "../AddIcon";
@@ -32,13 +31,13 @@ const AllTravels = () => {
         setLoadedTravel(travels)
       });
   }, []);
-  if (isLoading) {
-    return (
-      <section>
-        <h2>Loading.....</h2>
-      </section>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div>
+  //       <h2>Loading.....</h2>
+  //     </div>
+  //   );
+  // }
   // const cards = data.map((item) => {
   //   return <Card key={item.id} {...item} />; 
   // });
