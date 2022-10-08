@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar.js";
 import AddIcon from "../Components/AddIcon";
 // import Card from "../Card";
 import TravelList from "../Components/TravelList";
+import Loading from "../Components/Loading.js";
 
 const AllTravels = () => {
   const [loadedTravel, setLoadedTravel] = useState([]);
@@ -18,27 +19,26 @@ const AllTravels = () => {
         return response.json();
       })
       .then((data) => {
-        const meetups = [];
+        const travels = [];
 
         for (const key in data) {
-          const meetup = {
+          const travel = {
             id: key,
             ...data[key],
           };
-          meetups.push(meetup);
+          travels.push(travel);
         }
 
         setIsLoading(false);
-        setLoadedTravel(meetups);
+        setLoadedTravel(travels);
       });
   }, []);
   return (
     <div className="App">
       <Navbar />
       {isLoading &&
-       <div className="loading">
-        <h2>Loading.....</h2>
-      </div>}
+        <Loading/>
+      }
      {loadedTravel.length > 0 && <TravelList travels={loadedTravel} />}
       <AddIcon />
     </div>

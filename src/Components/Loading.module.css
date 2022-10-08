@@ -1,0 +1,47 @@
+:root{
+ --main-color:#ecf0f1;
+ --point-color:#000;
+ --size:4px;
+}
+
+.loading{
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ max-width: 100%;
+ margin: 20% auto;
+ gap: 0.5rem;
+}
+
+.loader{
+ background: inherit;
+ overflow: hidden;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 10000;
+}
+
+.loaderElement {
+  border-radius: 100%;
+  border: var(--size) solid var(--point-color);
+  margin: calc(var(--size)*2);
+}
+
+.loaderElement:nth-child(1){
+  animation: preloader .8s ease-in-out alternate infinite;
+}
+
+.loaderElement:nth-child(2){
+  animation: preloader .8s ease-in-out .1s alternate infinite;
+}
+.loaderElement:nth-child(3){
+  animation: preloader .8s ease-in-out .2s alternate infinite;
+}
+
+@keyframes preloader {
+  100% {
+    transform: scale(2);
+  }
+}
