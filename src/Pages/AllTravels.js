@@ -10,34 +10,28 @@ const AllTravels = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
+    setLoadedTravel(true);
     fetch(
-      "https://react-project-649ac-default-rtdb.firebaseio.com/travels.json"
+      "https://traveljournal-aa656-default-rtdb.firebaseio.com//travels.json"
     )
       .then((response) => {
-        response.json();
+        return response.json();
       })
       .then((data) => {
-        const travels = [];
+        const meetups = [];
 
         for (const key in data) {
-          const travel = {
+          const meetup = {
             id: key,
             ...data[key],
           };
-          travels.push(travel);
+          meetups.push(meetup);
         }
+
         setIsLoading(false);
-        setLoadedTravel(travels)
+        setLoadedTravel(meetups);
       });
   }, []);
-  // if (isLoading) {
-  //   return (
-  //     <div>
-  //       <h2>Loading.....</h2>
-  //     </div>
-  //   );
-  // }
   // const cards = data.map((item) => {
   //   return <Card key={item.id} {...item} />; 
   // });
@@ -47,6 +41,10 @@ const AllTravels = () => {
       {/* <section className="card-list"> 
       <Card travels={loadedTravel}/> 
       </section> */}
+      {isLoading &&
+       <div className="loading">
+        <h2>Loading.....</h2>
+      </div>}
      {loadedTravel.length > 0 && <TravelList travels={loadedTravel} />}
       <AddIcon />
     </div>
