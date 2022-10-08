@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Navbar";
+import Navbar from "../Components/Navbar.js";
 // import data from "../data";
-import AddIcon from "../AddIcon";
+import AddIcon from "../Components/AddIcon";
 // import Card from "../Card";
-import TravelList from "../TravelList";
+import TravelList from "../Components/TravelList";
 
 const AllTravels = () => {
   const [loadedTravel, setLoadedTravel] = useState([]);
@@ -32,15 +32,9 @@ const AllTravels = () => {
         setLoadedTravel(meetups);
       });
   }, []);
-  // const cards = data.map((item) => {
-  //   return <Card key={item.id} {...item} />; 
-  // });
   return (
     <div className="App">
       <Navbar />
-      {/* <section className="card-list"> 
-      <Card travels={loadedTravel}/> 
-      </section> */}
       {isLoading &&
        <div className="loading">
         <h2>Loading.....</h2>

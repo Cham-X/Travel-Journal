@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Navbar";
-import NewTravelForm from "../NewTravelForm"; 
+import Navbar from "../Components/Navbar";
+import NewTravelForm from "../Components/NewTravelForm"; 
 
 
 

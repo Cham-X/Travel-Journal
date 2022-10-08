@@ -1,5 +1,5 @@
 import React from "react";
-import Location from "./Fill 220.png";
+import Location from "../Images/Fill 220.png";
 
 const Card = (props) => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import AddImg from "./icons8-add-64.png"
+import AddImg from "../Images/icons8-add-64.png"
 
 const AddIcon = () => {
   return (
