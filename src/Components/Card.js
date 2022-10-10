@@ -18,7 +18,7 @@ const Card = (props) => {
               View Google Map
             </a>
           </p>
-          <h2>{props.title}</h2>
+          <h2>{props.travelTopic}</h2>
         </div>
         <div>
           <p className="date">
@@ -26,6 +26,7 @@ const Card = (props) => {
           </p>
           <p className="about">{props.description}</p>
         </div>
+        <button onClick={props.onRemoveTravel}>Remove Travel</button>
       </section>
     </li>
   );
