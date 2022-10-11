@@ -33,16 +33,35 @@ const AllTravels = () => {
         setLoadedTravel(travels);
       });
   }, []);
-  const onRemoveTravel = function(id){
-     setLoadedTravel(travels.filter(travel => travel.id !== id))
-  }
+
+  const onRemoveTravel = (id) => {
+    setIsLoading(true);
+    fetch(
+      `https://traveljournal-aa656-default-rtdb.firebaseio.com//travels.json/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((response) => {
+        response.json();
+      })
+      .then((travel) => {
+        setLoadedTravel(
+          loadedTravel &&
+            loadedTravel.filter((travel) => {
+              return travel.id !== id;
+            })
+        );
+      });
+  };
+
   return (
     <div className="App">
       <Navbar />
-      {isLoading &&
-        <Loading/>
-      }
-     {loadedTravel.length > 0 && <TravelList travels={loadedTravel} onRemoveTravel={onRemoveTravel}/>}
+      {isLoading && <Loading />}
+      {loadedTravel.length > 0 && (
+        <TravelList travels={loadedTravel} onRemoveTravel={onRemoveTravel} />
+      )}
       <AddIcon />
     </div>
   );

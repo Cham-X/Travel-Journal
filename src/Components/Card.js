@@ -2,6 +2,7 @@ import React from "react";
 import Location from "../Images/Fill 220.png";
 
 const Card = (props) => {
+
   return (
     <li className="card">
       <section className="image-section">
